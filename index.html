@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luxury Car Rental Intake Form</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background:
+        linear-gradient(rgba(0, 0, 0, 0.68), rgba(0, 0, 0, 0.72)),
+        url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1800&q=80");
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+      color: #fff;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 980px;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      background: rgba(12, 12, 12, 0.82);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-panel {
+      padding: 48px 38px;
+      background: linear-gradient(160deg, rgba(196, 150, 63, 0.22), rgba(0, 0, 0, 0.25));
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .badge {
+      display: inline-block;
+      width: fit-content;
+      padding: 8px 14px;
+      border: 1px solid rgba(232, 190, 104, 0.6);
+      border-radius: 999px;
+      color: #e8be68;
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .hero-panel h1 {
+      font-size: 42px;
+      line-height: 1.05;
+      margin-bottom: 18px;
+    }
+
+    .hero-panel p {
+      color: #d8d8d8;
+      line-height: 1.65;
+      font-size: 15px;
+    }
+
+    .details {
+      margin-top: 36px;
+      display: grid;
+      gap: 14px;
+      color: #e7e7e7;
+      font-size: 14px;
+    }
+
+    .details span {
+      color: #e8be68;
+      margin-right: 8px;
+    }
+
+    .form-panel {
+      padding: 42px;
+    }
+
+    .form-panel h2 {
+      font-size: 26px;
+      margin-bottom: 8px;
+    }
+
+    .form-panel .subtext {
+      color: #bdbdbd;
+      margin-bottom: 28px;
+      font-size: 14px;
+    }
+
+    form {
+      display: grid;
+      gap: 18px;
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 7px;
+      font-size: 13px;
+      color: #e7e7e7;
+      font-weight: 600;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.08);
+      color: #fff;
+      padding: 13px 14px;
+      border-radius: 12px;
+      outline: none;
+      font-size: 14px;
+      transition: 0.25s ease;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: #e8be68;
+      box-shadow: 0 0 0 3px rgba(232, 190, 104, 0.16);
+    }
+
+    select option {
+      color: #111;
+    }
+
+    textarea {
+      min-height: 95px;
+      resize: vertical;
+    }
+
+    .checkbox-line {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      color: #cfcfcf;
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .checkbox-line input {
+      width: auto;
+      margin-top: 2px;
+      accent-color: #e8be68;
+    }
+
+    button {
+      border: none;
+      background: linear-gradient(135deg, #e8be68, #b9842c);
+      color: #111;
+      padding: 15px 18px;
+      border-radius: 14px;
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 0.4px;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(232, 190, 104, 0.25);
+    }
+
+    .success-message {
+      display: none;
+      margin-top: 18px;
+      padding: 14px;
+      border-radius: 12px;
+      background: rgba(39, 174, 96, 0.18);
+      border: 1px solid rgba(39, 174, 96, 0.45);
+      color: #d9ffe7;
+      font-size: 14px;
+    }
+
+    @media (max-width: 850px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-panel {
+        padding: 34px;
+      }
+
+      .hero-panel h1 {
+        font-size: 34px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .row {
+        grid-template-columns: 1fr;
+      }
+
+      .form-panel {
+        padding: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <section class="hero-panel">
+      <div>
+        <div class="badge">Elite Rentals</div>
+        <h1>Luxury Performance Car Intake</h1>
+        <p>
+          Submit your rental request and our concierge team will confirm vehicle availability,
+          pricing, insurance requirements, and delivery options.
+        </p>
+      </div>
+
+      <div class="details">
+        <div><span>✓</span> Exotic & sports car rentals</div>
+        <div><span>✓</span> Flexible daily or weekend bookings</div>
+        <div><span>✓</span> Premium delivery available</div>
+      </div>
+    </section>
+
+    <section class="form-panel">
+      <h2>Request a Booking</h2>
+      <p class="subtext">Complete the form below and we will contact you to finalize your rental.</p>
+
+      <form id="rentalForm">
+        <div class="row">
+          <div>
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName" placeholder="Matteo" required />
+          </div>
+          <div>
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="lastName" placeholder="Turchio" required />
+          </div>
+        </div>
+
+        <div class="row">
+          <div>
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="name@email.com" required />
+          </div>
+          <div>
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="(555) 555-5555" required />
+          </div>
+        </div>
+
+        <div>
+          <label for="vehicle">Preferred Vehicle</label>
+          <select id="vehicle" name="vehicle" required>
+            <option value="">Select a vehicle</option>
+            <option>Porsche 911 Carrera</option>
+            <option>Porsche 911 Turbo S</option>
+            <option>Chevrolet Corvette C8</option>
+            <option>Lamborghini Huracán</option>
+            <option>Ferrari 488 GTB</option>
+            <option>Ferrari F8 Tributo</option>
+            <option>Audi R8</option>
+            <option>Nissan GT-R</option>
+            <option>Mercedes-AMG GT</option>
+            <option>BMW M4 Competition</option>
+            <option>McLaren 570S</option>
+            <option>Aston Martin Vantage</option>
+          </select>
+        </div>
+
+        <div class="row">
+          <div>
+            <label for="pickupDate">Pickup Date</label>
+            <input type="date" id="pickupDate" name="pickupDate" required />
+          </div>
+          <div>
+            <label for="returnDate">Return Date</label>
+            <input type="date" id="returnDate" name="returnDate" required />
+          </div>
+        </div>
+
+        <div class="row">
+          <div>
+            <label for="pickupLocation">Pickup Location</label>
+            <input type="text" id="pickupLocation" name="pickupLocation" placeholder="City or address" required />
+          </div>
+          <div>
+            <label for="age">Driver Age</label>
+            <input type="number" id="age" name="age" placeholder="25" min="18" required />
+          </div>
+        </div>
+
+        <div>
+          <label for="notes">Special Requests</label>
+          <textarea id="notes" name="notes" placeholder="Delivery request, preferred colour, occasion, mileage needs, etc."></textarea>
+        </div>
+
+        <label class="checkbox-line">
+          <input type="checkbox" required />
+          I confirm that I have a valid driver's licence and understand that insurance and deposit requirements may apply.
+        </label>
+
+        <button type="submit">Submit Rental Request</button>
+      </form>
+
+      <div class="success-message" id="successMessage">
+        Thank you. Your rental request has been received.
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const form = document.getElementById("rentalForm");
+    const successMessage = document.getElementById("successMessage");
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault();
+      successMessage.style.display = "block";
+      form.reset();
+    });
+  </script>
+</body>
+</html>
