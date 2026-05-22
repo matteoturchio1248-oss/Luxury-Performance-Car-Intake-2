@@ -182,17 +182,6 @@
       box-shadow: 0 12px 24px rgba(232, 190, 104, 0.25);
     }
 
-    .success-message {
-      display: none;
-      margin-top: 18px;
-      padding: 14px;
-      border-radius: 12px;
-      background: rgba(39, 174, 96, 0.18);
-      border: 1px solid rgba(39, 174, 96, 0.45);
-      color: #d9ffe7;
-      font-size: 14px;
-    }
-
     @media (max-width: 850px) {
       .container {
         grid-template-columns: 1fr;
@@ -241,37 +230,36 @@
       <h2>Request a Booking</h2>
       <p class="subtext">Complete the form below and we will contact you to finalize your rental.</p>
 
-     <form action="https://formsubmit.co/matteohr1248@gmail.com" method="POST">
+      <form action="https://formsubmit.co/matteohr1248@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="New Luxury Car Rental Intake" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_next" value="https://matteoturchio1248-oss.github.io/Luxury-Performance-Car-Intake/thank-you.html" />
 
-  <input type="hidden" name="_subject" value="New Luxury Car Rental Intake">
-  <input type="hidden" name="_captcha" value="false">
-  <input type="hidden" name="_template" value="table">
-       
         <div class="row">
           <div>
             <label for="firstName">First Name</label>
-            <input type="text" id="firstName" name="firstName" placeholder="Matteo" required />
+            <input type="text" id="firstName" name="First Name" placeholder="First name" required />
           </div>
           <div>
             <label for="lastName">Last Name</label>
-            <input type="text" id="lastName" name="lastName" placeholder="Turchio" required />
+            <input type="text" id="lastName" name="Last Name" placeholder="Last name" required />
           </div>
         </div>
 
         <div class="row">
           <div>
             <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" placeholder="name@email.com" required />
+            <input type="email" id="email" name="Email Address" placeholder="client@email.com" required />
           </div>
           <div>
             <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone" placeholder="(555) 555-5555" required />
+            <input type="tel" id="phone" name="Phone Number" placeholder="(555) 555-5555" required />
           </div>
         </div>
 
         <div>
           <label for="vehicle">Preferred Vehicle</label>
-          <select id="vehicle" name="vehicle" required>
+          <select id="vehicle" name="Preferred Vehicle" required>
             <option value="">Select a vehicle</option>
             <option>Porsche 911 Carrera</option>
             <option>Porsche 911 Turbo S</option>
@@ -291,45 +279,38 @@
         <div class="row">
           <div>
             <label for="pickupDate">Pickup Date</label>
-            <input type="date" id="pickupDate" name="pickupDate" required />
+            <input type="date" id="pickupDate" name="Pickup Date" required />
           </div>
           <div>
             <label for="returnDate">Return Date</label>
-            <input type="date" id="returnDate" name="returnDate" required />
+            <input type="date" id="returnDate" name="Return Date" required />
           </div>
         </div>
 
         <div class="row">
           <div>
             <label for="pickupLocation">Pickup Location</label>
-            <input type="text" id="pickupLocation" name="pickupLocation" placeholder="City or address" required />
+            <input type="text" id="pickupLocation" name="Pickup Location" placeholder="City or address" required />
           </div>
           <div>
             <label for="age">Driver Age</label>
-            <input type="number" id="age" name="age" placeholder="25" min="18" required />
+            <input type="number" id="age" name="Driver Age" placeholder="25" min="18" required />
           </div>
         </div>
 
         <div>
           <label for="notes">Special Requests</label>
-          <textarea id="notes" name="notes" placeholder="Delivery request, preferred colour, occasion, mileage needs, etc."></textarea>
+          <textarea id="notes" name="Special Requests" placeholder="Delivery request, preferred colour, occasion, mileage needs, etc."></textarea>
         </div>
 
         <label class="checkbox-line">
-          <input type="checkbox" required />
+          <input type="checkbox" name="Driver Confirmation" value="Confirmed" required />
           I confirm that I have a valid driver's licence and understand that insurance and deposit requirements may apply.
         </label>
 
         <button type="submit">Submit Rental Request</button>
       </form>
-
-      <div class="success-message" id="successMessage">
-        Thank you. Your rental request has been received.
-      </div>
     </section>
   </main>
-  
-    });
-  </script>
 </body>
 </html>
