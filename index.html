@@ -241,7 +241,12 @@
       <h2>Request a Booking</h2>
       <p class="subtext">Complete the form below and we will contact you to finalize your rental.</p>
 
-      <form id="rentalForm">
+      <form action="https://formsubmit.co/matteohr1248@gmail.com" method="POST">
+
+  <input type="hidden" name="_subject" value="New Luxury Car Rental Intake">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_template" value="table">
+  <input type="hidden" name="_next" value="https://matteoturchio1248-oss.github.io/Luxury-Performance-Car-Intake/">
         <div class="row">
           <div>
             <label for="firstName">First Name</label>
@@ -323,15 +328,7 @@
       </div>
     </section>
   </main>
-
-  <script>
-    const form = document.getElementById("rentalForm");
-    const successMessage = document.getElementById("successMessage");
-
-    form.addEventListener("submit", function(event) {
-      event.preventDefault();
-      successMessage.style.display = "block";
-      form.reset();
+  
     });
   </script>
 </body>
